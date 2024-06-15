@@ -1,7 +1,7 @@
 resource "aws_elastic_beanstalk_environment" "aprofile-bean-prod" {
   name                = "aprofile-bean-prod"
   application         = aws_elastic_beanstalk_application.aprofile-prod.name
-  solution_stack_name = "64bit Amazon Linux 2023 v5.1.8 running Tomcat 9 Corretto 11"
+  solution_stack_name = "64bit Amazon Linux 2 v4.5.2 running Tomcat 9 Corretto 8"
   cname_prefix        = "aprofile-bean-prod-domain"
   setting {
     name      = "VPCId"
