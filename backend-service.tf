@@ -18,7 +18,7 @@ resource "aws_db_instance" "aprofile-rds" {
   engine                 = "mysql"
   engine_version         = "5.6.34"
   instance_class         = "db.t2.micro"
-  name                   = var.dbname
+  db_name                   = var.dbname
   username               = var.dbuser
   password               = var.dbpass
   parameter_group_name   = "default.mysql5.6"
