@@ -146,8 +146,4 @@ resource "aws_elastic_beanstalk_environment" "aprofile-bean-prod" {
     aws_security_group.aprofile-bean-elb-sg,
     aws_security_group.aprofile-prod-sg
   ]
-
-  timeouts {
-    create = "30m"
-  }
 }
