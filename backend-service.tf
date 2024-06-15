@@ -16,12 +16,12 @@ resource "aws_db_instance" "aprofile-rds" {
   allocated_storage      = 20
   storage_type           = "gp2"
   engine                 = "mysql"
-  engine_version         = "8.0.28"
-  instance_class         = "db.t3.micro"
+  engine_version         = "5.7.44"
+  instance_class         = "db.t2.micro"
   db_name                = var.dbname
   username               = var.dbuser
   password               = var.dbpass
-  parameter_group_name   = "default.mysql8.0"
+  parameter_group_name   = "default.mysql5.7"
   multi_az               = "false"
   publicly_accessible    = "false"
   skip_final_snapshot    = true
