@@ -1,16 +1,7 @@
-variable "solution_stack_names" {
-  type    = list(string)
-  default = ["64bit Amazon Linux 2023 v5.1.8 running Tomcat 10 Corretto 17", "64bit Amazon Linux 2023 v5.1.8 running Tomcat 9 Corretto 17", "64bit Amazon Linux 2023 v5.1.8 running Tomcat 9 Corretto 11"]
-}
-
 resource "aws_elastic_beanstalk_environment" "aprofile-bean-prod" {
   name                = "aprofile-bean-prod"
   application         = aws_elastic_beanstalk_application.aprofile-prod.name
-
-  # Use count to choose a solution stack dynamically
-  count               = length(var.solution_stack_names)
-  solution_stack_name = var.solution_stack_names[count.index]
-
+  solution_stack_name = "64bit Amazon Linux 2023 v5.1.8 running Tomcat 9 Corretto 11"
   cname_prefix        = "aprofile-bean-prod-domain"
   setting {
     name      = "VPCId"
