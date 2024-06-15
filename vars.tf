@@ -28,11 +28,11 @@ variable MYIP {
     default = "175.101.18.135/32"
 }
 
-variable rmsuser {
+variable rmquser {
     default = "rabbit"
 }
 
-variable rmspass {
+variable rmqpass {
     default = "Aprofile@123456"
 }
 

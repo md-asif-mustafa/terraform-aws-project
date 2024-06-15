@@ -121,15 +121,15 @@ resource "aws_elastic_beanstalk_environment" "aprofile-bean-prod" {
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
     name      = "SecurityGroups"
-    value     = aws_security_group.vprofile-prod-sg.id
+    value     = aws_security_group.aprofile-prod-sg.id
   }
 
   setting {
     namespace = "aws:elbv2:loadbalancer"
     name      = "SecurityGroups"
-    value     = aws_security_group.vprofile-bean-elb-sg.id
+    value     = aws_security_group.aprofile-bean-elb-sg.id
   }
 
-  depends_on = [aws_security_group.vprofile-bean-elb-sg, aws_security_group.vprofile-prod-sg]
+  depends_on = [aws_security_group.aprofile-bean-elb-sg, aws_security_group.aprofile-prod-sg]
 
 }
